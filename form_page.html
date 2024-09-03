@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style_form.css" />
+    <title>Adicionar novo aluno</title>
+  </head>
+  <body>
+    <header>
+      <img class="logo-header" src="images/sme_logo.png" />
+      <a href="index.html" class="head-btn">Início</a>
+      <!--<a href="form_page.html" class="head-btn">Novo Aluno</a>
+      <a href="database.html" class="head-btn">Banco de Dados</a>-->
+    </header>
+    <div class="main-title">
+      <h1>FORMULÁRIO DE MATRÍCULA</h1>
+    </div>
+    <form action="" method="post" name="new-student-form">
+      <div id="container">
+        <div class="form-personal">
+          <div class="form-personal-title">
+            <h2>Informações Pessoais</h2>
+          </div>
+          <div class="form-personal1">
+            <div class="content_form">
+              <label for="nome_aluno">Nome completo:</label><br />
+              <input
+                type="text"
+                id="nome_aluno"
+                name="nome_aluno"
+                placeholder="Insira o nome completo do aluno"
+                required
+              />
+            </div>
+            <div class="content_form">
+              <label for="data_nascimento">Data de nascimento:</label><br />
+              <input
+                type="date"
+                id="data_nascimento"
+                name="data_nascimento"
+                required
+              />
+            </div>
+            <div class="content_form">
+              <label for="cpf">CPF:</label><br />
+              <input
+                type="text"
+                id="cpf"
+                name="cpf"
+                minlength="11"
+                maxlength="11"
+                placeholder="Insira o n° de CPF do aluno"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-personal2">
+            <div class="content_form">
+              <label for="cor">Cor/Raça</label><br />
+              <select name="cor" id="cor" required>
+                <option disabled selected="">Atribua uma cor/raça</option>
+                <option value="parda">Parda</option>
+                <option value="branca">Branca</option>
+                <option value="preta">Preta</option>
+                <option value="indígena">Indígena</option>
+                <option value="amarela">Amarela</option>
+              </select>
+            </div>
+            <div class="content_form">
+              <label for="sexo">Sexo:</label><br />
+              <select name="sexo" id="sexo" required>
+                <option disabled selected="">Selecione o sexo do aluno</option>
+                <option value="feminino">Feminino</option>
+                <option value="masculino">Masculino</option>
+              </select>
+            </div>
+            <div class="content_form">
+              <label for="contato">Contato:</label><br />
+              <input
+                type="tel"
+                id="contato"
+                name="contato"
+                placeholder="Insira um n° para contato"
+              />
+            </div>
+          </div>
+          <div class="form-personal3">
+            <div class="content_form">
+              <label for="filiacao1">Nome da mãe:</label><br />
+              <input
+                type="text"
+                id="filiacao1"
+                name="filiacao1"
+                placeholder="Insira o nome da mãe"
+                required
+              />
+            </div>
+            <div class="content_form">
+              <label for="filiacao2">Nome do pai:</label><br />
+              <input
+                type="text"
+                id="filiacao2"
+                name="filiacao2"
+                placeholder="Insira o nome do pai"
+              />
+            </div>
+          </div>
+          <h3>Informações Médicas</h3>
+          <div class="form-personal4">
+            <div class="content_form">
+              <label for="restricao_alimentar">Restrição alimentar:</label
+              ><br />
+              <select name="restricao_alimentar" id="restricao_alimentar">
+                <option disabled selected=""></option>
+                <option value="não">Nenhuma restrição alimentar</option>
+                <option value="intolerância à lactose">
+                  Intolerância à lactose
+                </option>
+                <option value="aplv">APLV</option>
+                <option value="diabetes">Diabetes</option>
+                <option value="alergia à trigo">Alergia à trigo</option>
+              </select>
+            </div>
+            <div class="content_form">
+              <label for="deficiencia">Deficiência atestada?</label><br />
+              <select name="deficiencia" id="deficiencia">
+                <option disabled selected=""></option>
+                <option value="sim">Sim</option>
+                <option value="não">Não</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-school">
+          <div class="form-school-title">
+            <h2>Informações Escolares</h2>
+          </div>
+          <div class="form-school1">
+            <div class="content_form">
+              <label for="zona_escola">Zona da escola:</label><br />
+              <select name="zona_escola" id="zona_escola" required>
+                <option disabled selected=""></option>
+                <option value="rural">Rural</option>
+                <option value="urbana">Urbana</option>
+              </select>
+            </div>
+            <div class="content_form">
+              <label for="escola">Unidade de ensino:</label><br />
+              <select name="escola" id="escola" required>
+                <option disabled selected=""></option>
+                <option value="divino pai eterno">Divino Pai Eterno</option>
+                <option value="eurico gaspar dutra">Eurico Gaspar Dutra</option>
+                <option value="joaquim correa mendes">
+                  Joaquim Correa Mendes
+                </option>
+                <option value="joaquim pedro da silva">
+                  Joaquim Pedro da Silva
+                </option>
+                <option value="josé antônio dos reis">
+                  José Antônio dos Reis
+                </option>
+                <option value="lúcia gonçalves de araújo">
+                  Lúcia Gonçalves de Araújo
+                </option>
+                <option value="manoel messias de oliveira">
+                  Manoel Messias de Oliveira
+                </option>
+                <option value="professor magalhães neto">
+                  Professor Magalhães Neto
+                </option>
+                <option value="reino da alegria">Reino da Alegria</option>
+                <option value="rui barbosa - rural">Rui Barbosa - Rural</option>
+                <option value="rui barbosa - urbano">
+                  Rui Barbosa - Urbano
+                </option>
+                <option value="santa cruz">Santa Cruz</option>
+                <option value="são jorge">São Jorge</option>
+                <option value="tarcício augusto da silva">
+                  Tarcício Augusto da Silva
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="form-school2">
+            <div class="content_form">
+              <label for="modalidade">Modalidade de ensino</label><br />
+              <select name="modalidade" id="modalidade" required>
+                <option disabled selected=""></option>
+                <option value="regular">Regular</option>
+                <option value="eja">EJA</option>
+                <option value="multi">Multisseriado</option>
+              </select>
+            </div>
+            <div class="content_form">
+              <label for="etapa">Etapa de ensino</label><br />
+              <select name="etapa" id="etapa" required>
+                <option value=""></option>
+                <option value="educação infantil">Educação Infantil</option>
+                <option value="anos iniciais">EF - Anos Iniciais</option>
+                <option value="anos finais">EF - Anos Finais</option>
+                <option value="eja - anos iniciais">EJA - Anos Finais</option>
+                <option value="eja - anos finais">EJA - Anos Finais</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-school3">
+            <div class="content_form">
+              <label for="serie_ano">Série/Ano:</label><br />
+              <select name="serie_ano" id="serie_ano" required>
+                <option disabled selected=""></option>
+                <option value="integral">Integral</option>
+                <option value="maternal">Maternal</option>
+                <option value="pré 1">Pré 1</option>
+                <option value="pré 2">Pré 2</option>
+                <option value="1º ano">1º Ano</option>
+                <option value="2º ano">2º Ano</option>
+                <option value="3º ano">3º Ano</option>
+                <option value="4º ano">4º Ano</option>
+                <option value="5º ano">5º Ano</option>
+                <option value="6º ano">6º Ano</option>
+                <option value="7º ano">7º Ano</option>
+                <option value="8º ano">8º Ano</option>
+                <option value="9º ano">9º Ano</option>
+                <option value="eja 1º ano">EJA 1º Ano</option>
+                <option value="eja 2º ano">EJA 2º Ano</option>
+                <option value="eja 3º ano">EJA 3º Ano</option>
+                <option value="eja 4º ano">EJA 4º Ano</option>
+                <option value="eja 5º ano">EJA 5º Ano</option>
+                <option value="eja 6º ano">EJA 6º Ano</option>
+                <option value="eja 7º ano">EJA 7º Ano</option>
+                <option value="eja 8º ano">EJA 8º Ano</option>
+                <option value="eja 9º ano">EJA 9º Ano</option>
+              </select>
+            </div>
+            <div class="content_form">
+              <label for="turma">Turma:</label><br />
+              <select name="turma" id="turma" required>
+                <option disabled selected=""></option>
+                <option value="A">Turma A</option>
+                <option value="B">Turma B</option>
+                <option value="C">Turma C</option>
+                <option value="D">Turma D</option>
+                <option value="E">Turma E</option>
+                <option value="F">Turma F</option>
+              </select>
+            </div>
+            <div class="content_form">
+              <label for="turno">Turno:</label><br />
+              <select name="turno" id="turno" required>
+                <option value=""></option>
+                <option value="matutino">Matutino</option>
+                <option value="vespertino">Vespertino</option>
+                <option value="noturno">Noturno</option>
+                <option value="integral">Integral</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-school4">
+            <div class="content_form">
+              <label for="transporte">Usa transporte público?</label><br />
+              <select name="transporte" id="transporte" required>
+                <option disabled selected=""></option>
+                <option value="sim">Sim</option>
+                <option value="não">Não</option>
+              </select>
+            </div>
+            <div class="content_form">
+              <label for="defasagem">Está em defasagem?</label><br />
+              <select name="defasagem" id="defasagem">
+                <option disabled selected=""></option>
+                <option value="sim">Sim</option>
+                <option value="não">Não</option>
+              </select>
+            </div>
+          </div>
+          <div class="buttons">
+            <div>
+              <button type="reset" class="reset">Redefinir</button>
+            </div>
+            <div>
+              <button type="submit" class="submit" value="submit">
+                Enviar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyPU5KtdSxCfWw3AF5K13dNt3I8fzMzWqHM4KwhAlxfzEn-nFKyPW2zr8V85t_1R4aTiQ/exec";
+      const form = document.forms["new-student-form"];
+      let isSubmitting = false;
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (isSubmitting) {
+          return;
+        }
+
+        isSubmitting = true;
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            alert("Obrigado! Seu novo aluno foi cadastrado com sucesso.");
+            window.location.reload();
+          })
+          .catch((error) => console.error("Erro!", error.message))
+          .finally(() => {
+            isSubmitting = false;
+          });
+      });
+    </script>
+  </body>
+</html>

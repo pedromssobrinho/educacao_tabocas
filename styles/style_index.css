@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    font-family: Montserrat;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;    
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: rgb(76, 50, 223);
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    width: 100vw;
+}
+
+.logo-header {
+    width: 150px;
+    padding: 10px;
+    margin-left: 7px;
+    margin-right: 20px;
+}
+
+.head-btn {
+    border: none;
+    padding: 15px 25px;
+    margin: 0px 7px;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.head-btn:hover {
+    background-color: rgb(242, 252, 255);
+    box-shadow: 0.1px 0.1px 5px rgb(206, 206, 206);
+}
+
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100vw;    
+    height: 100vh;
+    background-color: rgb(113, 55, 250);
+    min-width: 400px;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 06vw;
+    font-weight: 800;
+    margin-bottom: 0;    
+    text-align: start;    
+    margin-left: 5vw;
+    color: white;
+}
+
+h2 {
+    font-size: 3vw;
+    font-weight: 500;
+    margin-top: 0;
+    text-align: start;
+    margin-left: 5vw;
+    color: white;
+}
+
+h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.front-logo {
+    width: 200px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 40vh;
+    background-color: white;
+    padding: 20px;
+}
+
+.right {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(221, 207, 255);    
+    min-width: 400px;
+    justify-content: space-evenly;
+}
+
+.right:hover {
+    background-color: rgb(221, 207, 255);
+}
+
+.item1, .item2, .item3 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 24.7vw;
+    justify-content: space-between;
+    align-self: center;
+    text-align: center;
+    height: 100vh;
+    gap: 40px;
+}
+
+.item1 {
+    background-color: rgb(221, 207, 255);
+    justify-content: center;
+}
+
+.item1:hover {
+    opacity: 70%;
+    background-color: white;
+}
+
+.item2:hover {
+    opacity: 70%;
+    background-color: white;
+}
+
+.newentry {
+    width: 100px;
+}
+
+.search {
+    width: 100px;
+}
+
+.item2 {
+    background-color: rgb(202, 180, 253);
+    justify-content: center;
+}

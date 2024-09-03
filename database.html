@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de dados</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.9.3/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.9.3/js/tabulator.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!--<link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>-->
+    <link rel="stylesheet" href="styles/style_db.css"/>
+</head>
+<body>
+    <header>
+        <img class="logo-header" src="images/sme_logo.png" />
+        <a href="index.html" class="head-btn">Início</a>
+        <a href="form_page.html" class="head-btn">Novo Aluno</a>
+        <a href="database.html" class="head-btn">Banco de Dados</a>
+    </header>
+    <div class="main-title">
+        <h1>BANCO DE DADOS</h1>
+    </div>
+    <div class="container-filter">
+        <label for="sheet-selector">Ano:<br></label>
+        <select id="sheet-selector">
+            <option disabled selected=""></option>
+            <option value="0">2025</option>
+            <option value="1">2024</option>
+        </select>  
+        <div id="filters"></div>     
+    </div>
+    <div class="container">        
+        <div id="result-count"></div>
+        <div id="table"></div>
+    </div>
+
+    <script>
+        const apiUrl = 'https://script.google.com/macros/s/AKfycbwBk3g7wLUv-EklqIs8jKQYzh-zTGNPjrbRosWXyD5JMSybpSQnhvptVE4IA26EnpEg/exec';
+        const sheetId = '1FWFKvdTsGirRNafITc1Von7wRcLr5SoA6S0S-WyBqFk';
+        const gids = ["0", "1"];
+        let table;
+
+        const columns = [
+            {title: "Nome do aluno", field: "nome_aluno", width:200},
+            {title: "Data de nascimento", field: "data_nascimento", width:90},
+            {title: "CPF", field: "cpf", width:100},
+            {title: "Cor", field: "cor"},
+            {title: "Sexo", field: "sexo"},
+            {title: "Contato", field: "contato"},
+            {title: "Nome da mãe", field: "filiacao1"},
+            {title: "Nome do pai", field: "filiacao2"},
+            {title: "Restrição Alimentar", field: "restricao_alimentar"},
+            {title: "Deficiência", field: "deficiencia"},
+            {title: "Zona da escola", field: "zona_escola"},
+            {title: "Nome da escola", field: "escola", width:150},
+            {title: "Modalidade de ensino", field: "modalidade"},
+            {title: "Etapa de ensino", field: "etapa"},
+            {title: "Série/Ano", field: "serie_ano"},
+            {title: "Turma", field: "turma"},
+            {title: "Turno", field: "turno"},
+            {title: "Transporte público", field: "transporte"},
+            {title: "Defasado", field: "defasagem"}
+        ];
+
+        function createFilterInputs() {
+            const filtersDiv = document.getElementById('filters');
+            columns.forEach(column => {
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.placeholder = `Filter ${column.title}`;
+                input.classList.add('filter-input');
+                input.dataset.field = column.field;
+                filtersDiv.appendChild(input);
+            });
+        }
+
+        function updateResultCount() {
+            const filteredData = table.getDataCount("active");
+            document.getElementById('result-count').textContent = `Resultado da pesquisa: ${filteredData}`;
+        }
+
+        function loadData(sheetIndex) {
+            const gid = gids[sheetIndex];
+            const url = `${apiUrl}?sheetId=${sheetId}&gid=${gid}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (table) {
+                        table.setData(data);
+                    } else {
+                        table = new Tabulator("#table", {
+                            data: data,
+                            columns: columns,
+                            layout: "fitColumns",
+                            responsiveLayout: "hide",
+                            pagination: "local",
+                            paginationSize: 25,
+                            paginationSizeSelector: [25, 50, 100, 200],
+                            movableColumns: true,
+                            resizableRows: true,
+                            dataFiltered: updateResultCount,
+                        });
+                        createFilterInputs();
+                        setupFilterListeners();
+                    }
+                    updateResultCount();
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function setupFilterListeners() {
+            document.querySelectorAll('.filter-input').forEach(input => {
+                input.addEventListener('input', function() {
+                    const filters = [];
+                    document.querySelectorAll('.filter-input').forEach(filterInput => {
+                        if (filterInput.value) {
+                            filters.push({
+                                field: filterInput.dataset.field,
+                                type: "like",
+                                value: filterInput.value
+                            });
+                        }
+                    });
+                    table.setFilter(filters);
+                });
+            });
+        }
+
+        document.getElementById('sheet-selector').addEventListener('change', function() {
+            loadData(this.value);
+        });
+
+        // Load initial data
+        loadData(0);
+    </script>
+</body>
+</html>
