@@ -1,4 +1,4 @@
 AuthType Basic
 AuthName "Protected Site"
-AuthUserFile https://pedromssobrinho.github.io/educacao_tabocas/.htpasswd
+AuthUserFile https://github.com/pedromssobrinho/educacao_tabocas/blob/main/.htpasswd
 require valid-user
