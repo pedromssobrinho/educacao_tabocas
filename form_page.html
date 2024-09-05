@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="login_ns.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,9 +19,11 @@
       <a href="index.html" class="head-btn">Início</a>
       <a href="form_page.html" class="head-btn">Novo Aluno</a>
       <a href="database.html" class="head-btn">Banco de Dados</a>
+      <button class="logout-btn" id="logout-btn" onclick="logout()">Sair</button>
+      <div class="alert-logout">Atenção, técnico escolar! O acesso à esta plataforma é individual,<br>se não for mais utilizar o painel, clique em sair.</div>
     </header>
     <div class="main-title">
-      <h1>FORMULÁRIO DE MATRÍCULA</h1>
+      <h1>FORMULÁRIO DE MATRÍCULA - ANO LETIVO 2025</h1>
     </div>
     <form action="" method="post" name="new-student-form">
       <div id="container">
