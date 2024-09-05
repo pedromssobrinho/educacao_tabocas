@@ -14,13 +14,13 @@ function login() {
 
   // Check if the username exists and the password matches
   if (users[username] && users[username] === password) {
-    alert('Access granted!');
+    alert('Acesso permitido!');
     // If login is successful, store the authentication status with the unique key
     localStorage.setItem(pageKey, 'true');
     showContent();
   } else {
-    alert('Access denied!');
-    document.body.innerHTML = 'Unauthorized. Reload to try again.';
+    alert('Acesso negado!');
+    document.body.innerHTML = 'O acesso foi negado. Aparte F5 e tente novamente, se o problema persistir, entre em contato a Sec. Mun. de Educação de Tabocas.';
   }
 }
 
