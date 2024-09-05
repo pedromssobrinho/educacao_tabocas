@@ -21,13 +21,12 @@ header {
 
 .head-btn {
     border: none;
-    padding: 15px 25px;
+    padding: 18px 25px;
     margin: 0px 7px;
     background-color: white;
     color: black;
     font-size: 18px;
     font-weight: bold;
-    margin-top: 4px;
 }
 
 .head-btn:hover {
@@ -35,6 +34,34 @@ header {
     box-shadow: 0.1px 0.1px 5px rgb(206, 206, 206);
 }
 
+.logout-btn {
+    border: none;
+    padding: 15px 25px;
+    margin: 0px 7px;
+    background-color: rgb(252, 198, 198);
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+.logout-btn:hover {
+    border: none;
+    padding: 15px 25px;
+    margin: 0px 7px;
+    background-color: rgb(255, 169, 169);
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+.alert-logout {
+    padding-top: 10px;
+    padding-left: 10px;
+    color: brown;
+    font-weight: bold;
+  }
 
 #container {
     display: flex;
